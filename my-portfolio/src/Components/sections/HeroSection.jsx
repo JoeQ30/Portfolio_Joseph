@@ -14,7 +14,9 @@ const HeroSection = () => {
           <span className="hero-name">Joseph</span>
         </h1>
         <p className="hero-subtitle">
-          ¡Bienvenido! Soy un desarrollador Junior y estudiante del Instituto Tecnológico de Costa Rica con muchas ganas de crear soluciones innovadoras y ayudar a los demás a alcanzar sus objetivos digitales.
+          ¡Bienvenido! Soy un desarrollador Junior y estudiante del Instituto Tecnológico de 
+          Costa Rica con muchas ganas de crear soluciones innovadoras y ayudar a los demás a 
+          alcanzar sus objetivos digitales.
         </p>
         <SocialLinks />
         <button
