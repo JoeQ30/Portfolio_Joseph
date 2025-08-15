@@ -1,22 +1,22 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
 
-const SocialLinks = ({ className = "", size = 28 }) => {
+const SocialLinks = () => {
   const socialLinks = [
-    { href: "#", icon: Github, label: "GitHub" },
-    { href: "#", icon: Linkedin, label: "LinkedIn" },
-    { href: "#", icon: Mail, label: "Email" }
+    { href: "https://github.com/JoeQ30", icon: Github, label: "GitHub" },
+    { href: "https://www.linkedin.com/in/joseph-quir%C3%B3s-calvo-288a87310/", icon: Linkedin, label: "LinkedIn" },
+    { href: "mailto:jquirscalvo@email.com", icon: Mail, label: "Email" }
   ];
 
   return (
-    <div className={`flex justify-center space-x-6 ${className}`}>
+    <div className="social-links">
       {socialLinks.map(({ href, icon: Icon, label }) => (
         <a
           key={label}
           href={href}
-          className="text-gray-300 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
+          className="social-link"
           aria-label={label}
         >
-          <Icon size={size} />
+          <Icon size={28} />
         </a>
       ))}
     </div>

@@ -9,30 +9,46 @@ const AboutSection = () => {
     { icon: Palette, title: "UI/UX Design", color: "pink" }
   ];
 
+  const profileImageUrl = "/avatar_joseph.jpg";
+
   return (
-    <section id="about" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          Sobre <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text">Mí</span>
+    <section id="about" className="section">
+      <div className="container">
+        <h2 className="section-title">
+          Sobre <span className="section-title-accent">Mí</span>
         </h2>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="about-grid">
           <div>
-            <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-blue-500/30">
-              <div className="w-64 h-64 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-6xl">
-                👨‍💻
+            <div className="about-avatar">
+              <div className="avatar-inner">
+                {profileImageUrl ? (
+                  <img 
+                    src={profileImageUrl} 
+                    alt="Perfil" 
+                    className="avatar-image"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'block';
+                    }}
+                  />
+                ) : null}
+                <div className="avatar-placeholder" style={{ display: profileImageUrl ? 'none' : 'block' }}>
+                  👨‍💻
+                </div>
               </div>
             </div>
           </div>
-          <div className="space-y-6">
-            <p className="text-lg text-gray-300 leading-relaxed">
-              Soy un desarrollador web con más de 3 años de experiencia creando aplicaciones modernas y escalables. 
-              Me especializo en tecnologías como React, Node.js y el ecosistema JavaScript.
+          <div className="about-content">
+            <p className="about-text">
+              Hola, soy Joseph Quirós, estudiante de Ingeniería en Computación en el Instituto Tecnológico de 
+              Costa Rica. Me apasiona crear aplicaciones web modernas, eficientes y visualmente atractivas, 
+              siempre buscando unir funcionalidad con una excelente experiencia de usuario.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              Mi pasión por el código va más allá del trabajo - disfruto explorando nuevas tecnologías, 
-              contribuyendo a proyectos open source y creando soluciones innovadoras.
+            <p className="about-text">
+              Disfruto aprender y adaptarme rápidamente a nuevas tecnologías, y me involucro de lleno en cada 
+              proyecto para asegurar que no solo cumpla su objetivo, sino que supere las expectativas.
             </p>
-            <div className="grid grid-cols-2 gap-6 pt-6">
+            <div className="services-grid">
               {services.map((service, index) => (
                 <ServiceItem key={index} {...service} />
               ))}

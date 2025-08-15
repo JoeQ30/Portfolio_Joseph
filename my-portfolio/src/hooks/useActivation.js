@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-// Hook personalizado para manejar el scroll y sección activa
 const useActiveSection = () => {
   const [activeSection, setActiveSection] = useState('hero');
 
@@ -27,7 +26,6 @@ const useActiveSection = () => {
   return activeSection;
 };
 
-// Utilidad para scroll suave
 const scrollToSection = (sectionId) => {
   document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
 };
